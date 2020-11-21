@@ -22,42 +22,6 @@ from cowpy import cow
 from userge import userge, Message
 
 
-@userge.on_cmd(r"(?:Kek|:/)$",
-               about={'header': "Check yourself, hint: `:/`"}, name='Kek',
-               trigger='', allow_via_bot=False)
-async def kek_(message: Message):
-    """kek"""
-    kek = ["/", "\\"]
-    for i in range(1, 9):
-        time.sleep(0.3)
-        await message.try_to_edit(":" + kek[i % 2])
-
-
-@userge.on_cmd(r"(?:Lol|-_-)$",
-               about={'header': "Check yourself, hint: `-_-`"}, name='Lol',
-               trigger='', allow_via_bot=False)
-async def lol_(message: Message):
-    """lol"""
-    lol = "-_ "
-    for i in range(9):
-        if i % 3 == 0:
-            lol = "-_ "
-        lol = lol[:-1] + "_-"
-        await message.try_to_edit(lol, parse_mode="html")
-
-
-@userge.on_cmd(r"(?:Fun|;_;)$",
-               about={'header': "Check yourself, hint: `;_;`"}, name="Fun",
-               trigger='', allow_via_bot=False)
-async def fun_(message: Message):
-    """fun"""
-    fun = ";_ "
-    for i in range(9):
-        if i % 3 == 0:
-            fun = ";_ "
-        fun = fun[:-1] + "_;"
-        await message.try_to_edit(fun, parse_mode="html")
-
 
 @userge.on_cmd("Oof$", about={'header': "Ooooof"},
                trigger='', allow_via_bot=False)
@@ -357,8 +321,8 @@ async def decide_(message: Message):
     if message.reply_to_message:
         message_id = message.reply_to_message.message_id
     await message.delete()
-    await message.client.send_photo(chat_id=chat_id,
-                                    photo=path,
+    await message.client.send_animation(chat_id=chat_id,
+                                    animation=path,
                                     caption=str(r["answer"]).upper(),
                                     reply_to_message_id=message_id)
     os.remove(path)
