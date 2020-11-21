@@ -349,7 +349,7 @@ if userge.has_bot:
         results = [
             InlineQueryResultArticle(
                 id=uuid4(),
-                title="Repo",
+                title="No Access",
                 input_message_content=InputTextMessageContent(
                     "**You don't have Permission to Use Me. Only My Owner @Alone215 can Use Me** 🤷‍♂️"
                 ),
@@ -360,7 +360,7 @@ if userge.has_bot:
                     [
                         [
                             InlineKeyboardButton(
-                                "👑 Alone",
+                                "Alone",
                                 url="https://t.me/Alone215"),
                         ]
                     ]
