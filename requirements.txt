@@ -11,6 +11,7 @@ google-auth-httplib2
 google-auth-oauthlib
 googletrans
 hachoir
+heroku3
 html-telegraph-poster
 motor
 natsort
