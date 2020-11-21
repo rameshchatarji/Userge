@@ -215,7 +215,7 @@ if userge.has_bot:
             await c_q.answer(msg, show_alert=True)
         else:
             await c_q.answer(
-                f"Only {flname} can see this Private Msg... 😔", show_alert=True)
+                f"Only {flname} can see this Private Msg... 😡", show_alert=True)
 
     def is_filter(name: str) -> bool:
         split_ = name.split('.')
@@ -351,21 +351,17 @@ if userge.has_bot:
                 id=uuid4(),
                 title="Repo",
                 input_message_content=InputTextMessageContent(
-                    "**Here's how to setup Userge** 😎"
+                    "**You don't have Permission to Use Me. Only My Owner @Alone215 can Use Me** 🤷‍♂️"
                 ),
-                url="https://github.com/UsergeTeam/Userge",
-                description="Setup Your Own",
-                thumb_url="https://imgur.com/download/Inyeb1S",
+                url="https://t.me/Alone215",
+                description="You Don't Have Access to Me",
+                thumb_url="https://i.imgur.com/XJdb35E.png",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton(
-                                "🧰 Userge Repo",
-                                url="https://github.com/UsergeTeam/Userge"),
-                            InlineKeyboardButton(
-                                "🖥 Deploy Userge",
-                                url=("https://heroku.com/deploy?template="
-                                     "https://github.com/UsergeTeam/Userge/tree/master"))
+                                "👑 Alone",
+                                url="https://t.me/Alone215"),
                         ]
                     ]
                 )
@@ -398,15 +394,15 @@ if userge.has_bot:
                 PRVT_MSGS[inline_query.id] = (user.id, user.first_name, msg.strip(': '))
                 prvte_msg = [[InlineKeyboardButton(
                     "Show Message 🔐", callback_data=f"prvtmsg({inline_query.id})")]]
-                msg_c = f"🔒 A **private message** to {'@' + user.username}, "
-                msg_c += "Only he/she can open it."
+                msg_c = f"I have Sent you a 🔒 {'@' + user.username}, "
+                msg_c += "Only You can open it."
                 results.append(
                     InlineQueryResultArticle(
                         id=uuid4(),
-                        title=f"A Private Msg to {user.first_name}",
+                        title=f"Send a Private Msg to {user.first_name}",
                         input_message_content=InputTextMessageContent(msg_c),
                         description="Only he/she can open it",
-                        thumb_url="https://imgur.com/download/Inyeb1S",
+                        thumb_url="https://i.imgur.com/Y4CrmVG.jpg",
                         reply_markup=InlineKeyboardMarkup(prvte_msg)
                     )
                 )
