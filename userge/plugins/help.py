@@ -351,17 +351,17 @@ if userge.has_bot:
                 id=uuid4(),
                 title="No Access",
                 input_message_content=InputTextMessageContent(
-                    "**You don't have Permission to Use Me. Only My Owner @Alone215 can Use Me** 🤷‍♂️"
+                    "**You Don't have Permission to use me. Only My Owner @Alone215 can use me** 😢"
                 ),
                 url="https://t.me/Alone215",
-                description="You Don't Have Access to Me",
-                thumb_url="https://i.imgur.com/XJdb35E.png",
+                description="You don't have Access to use me",
+                thumb_url="https://imgur.com/download/XJdb35E",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton(
-                                "Alone",
-                                url="https://t.me/Alone215"),
+                                "Contact Alone",
+                                url="https://t.me/Alone215")
                         ]
                     ]
                 )
@@ -393,16 +393,16 @@ if userge.has_bot:
                     return
                 PRVT_MSGS[inline_query.id] = (user.id, user.first_name, msg.strip(': '))
                 prvte_msg = [[InlineKeyboardButton(
-                    "Show Message 🔐", callback_data=f"prvtmsg({inline_query.id})")]]
-                msg_c = f"I have Sent you a 🔒 {'@' + user.username}, "
-                msg_c += "Only You can open it."
+                    "Show Message", callback_data=f"prvtmsg({inline_query.id})")]]
+                msg_c = f"**I have Sent you a Private Message🔒 {'@' + user.username}**, "
+                msg_c += "Only you can open it."
                 results.append(
                     InlineQueryResultArticle(
                         id=uuid4(),
                         title=f"Send a Private Msg to {user.first_name}",
                         input_message_content=InputTextMessageContent(msg_c),
                         description="Only he/she can open it",
-                        thumb_url="https://i.imgur.com/Y4CrmVG.jpg",
+                        thumb_url="https://imgur.com/download/Inyeb1S",
                         reply_markup=InlineKeyboardMarkup(prvte_msg)
                     )
                 )
